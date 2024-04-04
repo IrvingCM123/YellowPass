@@ -4,6 +4,7 @@ import { convert_Image } from './image.function';
 import * as dotenv from 'dotenv';
 import { convertToWallet} from './wallet.function';
 import * as nodemailer from "nodemailer";
+import { convertToWalletIOS } from './ios/ios.function';
 
 dotenv.config();
 
@@ -16,16 +17,18 @@ export async function enviarEmail(Data: any): Promise<string> {
       let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "***************",
-          pass: "u*****************+",
+          user: "bagdiana03@gmail.com",
+          pass: "upwlojvmpxuahhyy",
         },
       });
 
       let imagen_boleto_path = await convert_Image(Datos);
 
       let url_wallet = await convertToWallet(Datos);
+      
+      let url_wallet_ios = await convertToWalletIOS(Datos);
 
-      const html_template = email_template(Datos, imagen_boleto_path, url_wallet);
+      const html_template = email_template(Datos, imagen_boleto_path, url_wallet, url_wallet_ios);
 
       const msg = {
         to: Destinatario,

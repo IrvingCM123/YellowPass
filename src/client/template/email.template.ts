@@ -2,6 +2,7 @@ export function email_template(
   Datos: any,
   url_imagen: string,
   url_wallet: string,
+  url_wallet_ios: any
 ) {
   const html_boletos = `
     <!DOCTYPE html>
@@ -79,7 +80,7 @@ img {
              <img src="https://firebasestorage.googleapis.com/v0/b/heartmodel-caedd.appspot.com/o/Captura%20de%20pantalla%202024-04-03%20173539.png?alt=media&token=c17480b8-7a71-4a46-ae3c-48d843092d2f" alt="Agregar a Apple Wallet">
           </a>
 
-            <a href="${url_wallet}" download="Boleto.jpg">
+            <a href="${url_wallet_ios}" download="Boleto.jpg">
              <img src="https://developers.google.com/static/wallet/images/wallet-icon_72.png" alt="Agregar a Google Wallet">
           </a>
           </div>

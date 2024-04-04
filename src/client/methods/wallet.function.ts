@@ -10,10 +10,10 @@ const { createShortUrl, decodeURL } = require('shortlnk');
 
 export async function convertToWallet(Datos: any) {
     try {
-        let adk = "********++";
+        let adk = "flecha_1245";
         let tokenUser = `${Datos.Nombre_Usuario}${Datos.Numero_Boleto}`;
         let credenciales_google = google_credencial;
-        const issuerId = '338800000********';
+        const issuerId = '33880000000******';
         const classId = `${issuerId}.${adk}`;
         const baseUrl = 'https://walletobjects.googleapis.com/walletobjects/v1';
 
